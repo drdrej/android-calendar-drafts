@@ -1,0 +1,16 @@
+package com.touchableheroes.drafts.calendar.dao;
+
+import android.net.Uri;
+
+public class EventId {
+
+	private Long id;
+
+	public EventId(final Uri uri) {
+		try {
+			this.id = Long.parseLong(uri.getLastPathSegment());
+		} catch (final Throwable x) {
+			this.id = -1;
+		}
+	}
+}

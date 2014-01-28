@@ -1,0 +1,73 @@
+package com.touchableheroes.drafts.calendar.dao;
+
+import com.touchableheroes.drafts.calendar.cmd.DeleteEventCmd;
+import com.touchableheroes.drafts.calendar.cmd.ExistsEventCmd;
+import com.touchableheroes.drafts.calendar.cmd.InsertEventCmd;
+
+import android.app.Activity;
+import android.net.Uri;
+import android.util.Log;
+
+/**
+ * Simple dao to access calendar-events.
+ * 
+ * @author asiebert
+ */
+public class EventsDAO {
+
+	private final Activity activity;
+	private final InsertEventCmd insert;
+	private final ExistsEventCmd exists;
+	private final DeleteEventCmd delete;
+
+	public EventsDAO(final Activity activity) {
+		this.activity = activity;
+		this.insert = new InsertEventCmd(activity);
+		this.exists = new ExistsEventCmd(activity);
+		this.delete = new DeleteEventCmd(activity);
+	}
+
+	/**
+	 * method to create one simple event.
+	 * 
+	 * @param beginDate start-date
+	 * @param endDate end-date
+	 * @param title - title of the event
+	 * @param description - description
+	 * 
+	 * @return generated EventId
+	 */
+	public EventId createEvent(final long beginDate, final long endDate,
+			final String title, final String description) {
+		final Uri result = insert.exec(1, beginDate, endDate, title, description);
+		return new EventId(result);
+	}
+
+	public boolean createRepeatableEvent(final long beginDate,
+			final String duration, final String title, final String description) {
+		// insert.exec(1, beginDate, duration, title, description);
+		//
+		// event.put("rrule", "FREQ=WEEKLY;WKST=SU;BYDAY=WE");
+		// event.put("allDay", 1); // 0 for false, 1 for true
+		// event.put("eventStatus", 1);
+		// event.put("hasAlarm", 1); // 0 for false, 1 for true
+		// event.put("duration","P3600S")
+		//
+		return true;
+	}
+
+	public boolean exists(final EventId id) {
+		final Uri idUri = id.getUri();
+		return exists.exec(idUri);
+	}
+
+	public boolean delete(final EventId id) {
+		return this.delete.exec(id.getUri());
+	}
+	
+	public void findByInfo() {
+		// window.plugins.calendar.findEvent(title,location,notes,startDate,endDate,success,error);
+	}
+
+
+}

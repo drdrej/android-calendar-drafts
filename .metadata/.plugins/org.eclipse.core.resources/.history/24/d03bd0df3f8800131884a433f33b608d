@@ -1,0 +1,58 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import java.util.ArrayList;
+
+import android.annotation.TargetApi;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
+import android.provider.CalendarContract.Events;
+import android.util.Log;
+
+@TargetApi(14)
+public class DeleteEventByHeaderCmd extends DeleteEventCmd {
+
+	public DeleteEventByHeaderCmd(Context ctx) {
+		super(ctx);
+	}
+
+	public boolean exec(final String title, final long begin, final long end) {
+		final ContentResolver cr = getContentResolver();
+
+		final String where = Events.TITLE + " = ? ";
+		final String[] projection = { Events.TITLE, Events._ID };
+		final String[] values = new String[] { title };
+
+		final Cursor cursor = cr.query(Events.CONTENT_URI, projection, where,
+				values, null);
+		
+	
+		final int count = cursor.getCount();
+		
+		System.out.println(">>> COUNT :::: Count = " + count);
+//		cursor.moveToFirst();
+
+//		while (cursor.moveToNext()) {
+//			final int columnIdx = cursor.getColumnIndex(Events.TITLE);
+//			final int columnIndex2 = cursor.getColumnIndex(Events.HAS_ALARM);
+//
+//			Log.d("calendar-drafts",
+//					cursor.getString(columnIdx) + ","
+//							+ cursor.getInt(columnIndex2));
+//		}
+
+		final ArrayList<Uri> ids = new ArrayList<Uri>();
+		while (cursor.moveToNext()) {
+			final int idIdx = cursor.getColumnIndex(Events._ID);
+			final int titleIdx = cursor.getColumnIndex(Events.TITLE);
+		   
+			Log.d("calendar-drafts", "-- ## title : " + cursor.getString(titleIdx));
+		}
+		
+		cursor.close();
+		
+		return false;
+	}
+
+}

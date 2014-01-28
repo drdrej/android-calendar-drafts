@@ -1,0 +1,16 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import android.content.Context;
+
+public class DeleteEventByHeaderCmd extends DeleteEventCmd {
+
+	public DeleteEventByHeaderCmd(Context ctx) {
+		super(ctx);
+	}
+	
+	public boolean exec(final String title, final long begin, final long end) {
+		
+		return false;
+	}
+
+}

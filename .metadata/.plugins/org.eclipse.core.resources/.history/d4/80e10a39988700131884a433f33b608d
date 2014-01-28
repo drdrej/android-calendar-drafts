@@ -1,0 +1,11 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import android.app.Activity;
+
+public class ExistsEventCmd {
+
+	public ExistsEventCmd(final Activity activity) {
+		this.activity = activity;
+	}
+
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CreateEventsTestCase" project="tests" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="asus-nexus_7-015d483b8a0ffc0a" time="0.296">
+    <testsuite name="com.touchableheroes.drafts.calendar.test.CreateEventsTestCase" time="0.296">
+      <testcase name="testSimpleEvent " classname="com.touchableheroes.drafts.calendar.test.CreateEventsTestCase" time="0.296"/>
+    </testsuite>
+  </testsuite>
+</testrun>

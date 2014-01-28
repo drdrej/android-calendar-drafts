@@ -1,0 +1,40 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import android.annotation.TargetApi;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.database.Cursor;
+import android.provider.CalendarContract.Events;
+import android.util.Log;
+
+@TargetApi(14)
+public class DeleteEventByHeaderCmd extends DeleteEventCmd {
+
+	public DeleteEventByHeaderCmd(Context ctx) {
+		super(ctx);
+	}
+	
+	public boolean exec(final String title, final long begin, final long end) {
+		final ContentResolver cr = getContentResolver();
+		
+		final String where = Events.TITLE + " = ? ";
+		final String[] projection = { Events.TITLE };
+		final String[]  values = new String[] { title };
+		
+		final Cursor cursor = cr.query(Events.CONTENT_URI, projection, where, values, null);
+		
+		while (cursor.moveToNext())
+		{           
+		     //This correctly shows the future events each have an alarm (hasAlarm = 1)
+			final int columnIdx = cursor.getColumnIndex(Events.TITLE);
+			
+		     Log.d("calendar-drafts", 
+		          cursor.getString() + ","
+		          cursor.getInt(cursor.getColumnIndex(Events.HAS_ALARM))
+		     );
+		}
+		
+		return false;
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import android.content.Context;
+
+public class DeleteEventCmd extends ContextCmd {
+
+	public DeleteEventCmd(final Context ctx) {
+		super(ctx);
+	}
+
+}

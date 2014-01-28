@@ -1,0 +1,30 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import java.util.Calendar;
+
+import android.content.ContentResolver;
+import android.content.Context;
+import android.database.Cursor;
+import android.provider.CalendarContract.Calendars;
+import android.provider.CalendarContract.Events;
+
+public class DeleteEventByHeaderCmd extends DeleteEventCmd {
+
+	public DeleteEventByHeaderCmd(Context ctx) {
+		super(ctx);
+	}
+	
+	public boolean exec(final String title, final long begin, final long end) {
+		final ContentResolver cr = getContentResolver();
+		
+		final String where = Events.TITLE + " = ? ";
+		final String[] projection = { Events.TITLE };
+		final String[]  values = new String[] { title };
+		
+//		final String sa1 = "%A%"; // contains an "A"
+		
+		final Cursor cursor = cr.query(Events.CONTENT_URI, projection, where, values, null);
+		return false;
+	}
+
+}

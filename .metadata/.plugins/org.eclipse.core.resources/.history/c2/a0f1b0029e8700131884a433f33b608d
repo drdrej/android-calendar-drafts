@@ -1,0 +1,16 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import android.content.Context;
+
+/**
+ * deletes an event in calendar.
+ *  
+ * @author asiebert
+ */
+public class DeleteEventCmd extends ContextCmd {
+
+	public DeleteEventCmd(final Context ctx) {
+		super(ctx);
+	}
+
+}

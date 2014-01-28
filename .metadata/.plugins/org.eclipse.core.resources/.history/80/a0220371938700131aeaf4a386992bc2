@@ -1,0 +1,44 @@
+package com.touchableheroes.drafts.calendar.test;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import com.touchableheroes.drafts.calendar.Start;
+import com.touchableheroes.drafts.calendar.dao.CalendarDAO;
+
+import android.content.Context;
+import android.test.ActivityUnitTestCase;
+
+/**
+ * Test-case to test creation of calendar-events
+ * 
+ * @author asiebert
+ */
+public class CreateEventsTestCase extends ActivityUnitTestCase<Start>{
+
+	public CreateEventsTestCase() {
+		super(Start.class);
+	}
+	
+	
+	/**
+	 * creates a simple event with start and end-date.
+	 * date is in millis.
+	 * 
+	 * @throws Exception
+	 */
+	public void testSimpleEvent() throws Exception {
+		final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US);
+		final Date begin = sdf.parse( "2015-01-20 12:00" );
+		final Date end = sdf.parse( "2015-01-22 10:00" );
+		
+		final Context ctx = getInstrumentation().getContext();
+		
+		
+		final CalendarDAO dao = new CalendarDAO( getActivity() );
+		
+		dao.createEvent(begin.getTime(), end.getTime(), "Calendar-Drafts-Simple-Event", "A simple event, created by calendar.drafts" );
+	}
+
+}

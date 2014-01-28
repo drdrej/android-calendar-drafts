@@ -1,0 +1,5 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+public class DeleteEventCmd extends ContextCmd {
+
+}

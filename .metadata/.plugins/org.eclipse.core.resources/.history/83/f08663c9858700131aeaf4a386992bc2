@@ -1,0 +1,18 @@
+package com.touchableheroes.drafts.calendar;
+
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.TextView;
+import com.googlecode.androidannotations.annotations.AfterViews;
+import com.googlecode.androidannotations.annotations.EActivity;
+import com.googlecode.androidannotations.annotations.ViewById;
+
+public class Start extends Activity {
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater();
+		return true;
+	}
+
+}

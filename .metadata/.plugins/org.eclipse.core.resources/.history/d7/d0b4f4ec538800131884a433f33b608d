@@ -1,0 +1,76 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import java.util.TimeZone;
+
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.net.Uri;
+import android.os.Build;
+import android.provider.CalendarContract.Events;
+
+/**
+ * @author A. Siebert / ask@touchableheroes.com
+ */
+@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+public class InsertEventCmd extends ContextCmd {
+
+	public InsertEventCmd(final Activity ctx) {
+		super(ctx);
+	}
+	
+
+	@SuppressLint("InlinedApi")
+	public Uri exec(final int calenderId, final long start, final long end, final String title, final String description) {
+		final ContentResolver cr = getContentResolver();
+		
+		final ContentValues values = new ContentValues();
+		
+		values.put(Events.CALENDAR_ID, calenderId);
+		
+		values.put(Events.DTSTART, start);
+		values.put(Events.DTEND, end);
+		
+		values.put(Events.ALL_DAY, 0);
+		
+		values.put(Events.TITLE, title);
+		values.put(Events.DESCRIPTION, description);
+		
+		final TimeZone zone = TimeZone.getDefault();
+		values.put(Events.EVENT_TIMEZONE, zone.getID());
+		
+		return cr.insert(Events.CONTENT_URI, values);
+	}
+
+}
+
+
+/*
+Constant	Description
+CALENDAR_ID	The _ID of the calendar the event belongs to.
+ORGANIZER	Email of the organizer (owner) of the event.
+TITLE	The title of the event.
+EVENT_LOCATION	Where the event takes place.
+DESCRIPTION	The description of the event.
+
+DTSTART	The time the event starts in UTC milliseconds since the epoch.
+DTEND	The time the event ends in UTC milliseconds since the epoch.
+
+EVENT_TIMEZONE	The time zone for the event.
+
+EVENT_END_TIMEZONE	The time zone for the end time of the event.
+
+DURATION	The duration of the event in RFC5545 format. For example, a value of "PT1H" states that the event should last one hour, and a value of "P2W" indicates a duration of 2 weeks.
+
+ALL_DAY	A value of 1 indicates this event occupies the entire day, as defined by the local time zone. A value of 0 indicates it is a regular event that may start and end at any time during a day.
+
+
+RRULE	The recurrence rule for the event format. For example, "FREQ=WEEKLY;COUNT=10;WKST=SU". You can find more examples here.
+RDATE	The recurrence dates for the event. You typically use RDATE in conjunction with RRULE to define an aggregate set of repeating occurrences. For more discussion, see the RFC5545 spec.
+AVAILABILITY	If this event counts as busy time or is free time that can be scheduled over.
+GUESTS_CAN_MODIFY	Whether guests can modify the event.
+GUESTS_CAN_INVITE_OTHERS	Whether guests can invite other guests.
+GUESTS_CAN_SEE_GUESTS	Whether guests can see the list of attendees.
+*/

@@ -1,0 +1,32 @@
+package com.touchableheroes.drafts.calendar.test;
+
+import java.text.SimpleDateFormat;
+
+import com.touchableheroes.drafts.calendar.Start;
+
+import android.test.ActivityUnitTestCase;
+
+/**
+ * Test-case to test creation of calendar-events
+ * 
+ * @author asiebert
+ */
+public class CreateEventsTestCase extends ActivityUnitTestCase<Start>{
+
+	public CreateEventsTestCase(final Class<Start> activityClass) {
+		super(activityClass);
+	}
+	
+	
+	/**
+	 * creates a simple event with start and end-date.
+	 * date is in millis.
+	 * 
+	 * @throws Exception
+	 */
+	public void testSimpleEvent() throws Exception {
+		final SimpleDateFormat sdf = new SimpleDateFormat(format, Locale.US);
+		final 
+	}
+
+}

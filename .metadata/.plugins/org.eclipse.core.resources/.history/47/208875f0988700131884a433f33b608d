@@ -1,0 +1,25 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import java.util.TimeZone;
+
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.net.Uri;
+import android.provider.CalendarContract.Events;
+
+public class ExistsEventCmd extends ContextCmd {
+
+	public ExistsEventCmd(final Activity activity) {
+		super(activity);
+	}
+
+	public void exec(final Uri idUri) {
+		final ContentResolver cr = getContentResolver();
+		final ContentValues values = new ContentValues();
+		
+		
+		return cr.insert(Events.CONTENT_URI, values);
+	}
+
+}

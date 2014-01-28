@@ -1,0 +1,40 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import java.util.TimeZone;
+
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.net.Uri;
+import android.provider.CalendarContract.Events;
+
+public class ExistsEventCmd {
+
+	private Activity activity;
+
+	public ExistsEventCmd(final Activity activity) {
+		this.activity = activity;
+	}
+
+	public void exec(final Uri idUri) {
+		final ContentResolver cr = getContentResolver();
+		
+		final ContentValues values = new ContentValues();
+		
+		values.put(Events.CALENDAR_ID, calenderId);
+		
+		values.put(Events.DTSTART, start);
+		values.put(Events.DTEND, end);
+		
+		values.put(Events.ALL_DAY, 0);
+		
+		values.put(Events.TITLE, title);
+		values.put(Events.DESCRIPTION, description);
+		
+		final TimeZone zone = TimeZone.getDefault();
+		values.put(Events.EVENT_TIMEZONE, zone.getID());
+		
+		return cr.insert(Events.CONTENT_URI, values);
+	}
+
+}

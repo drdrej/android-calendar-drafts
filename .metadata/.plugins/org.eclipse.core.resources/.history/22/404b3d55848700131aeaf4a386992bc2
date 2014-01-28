@@ -1,0 +1,9 @@
+package com.touchableheroes.drafts.calendar.test;
+
+import com.touchableheroes.drafts.calendar.Start;
+
+import android.test.ActivityUnitTestCase;
+
+public class CreateEventsTestCase extends ActivityUnitTestCase<Start>{
+
+}

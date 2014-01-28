@@ -1,0 +1,21 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import android.content.ContentResolver;
+import android.content.Context;
+
+/**
+ * 
+ * @author asiebert
+ */
+public abstract class ContextCmd {
+
+	private final Context ctx;
+
+	public ContextCmd(Context ctx) {
+		this.ctx = ctx;
+	}
+	
+	public ContentResolver getContentResolver() {
+		return context.getContentResolver();
+	}
+}
