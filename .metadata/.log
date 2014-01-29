@@ -2694,3 +2694,16 @@ java.lang.ClassCastException: java.lang.Object cannot be cast to org.eclipse.e4.
 
 !ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-01-29 21:43:18.547
 !MESSAGE Starting AndroidAnnotations annotation processing
+!SESSION 2014-01-29 23:23:34.619 -----------------------------------------------
+eclipse.buildId=v22.0.1-685705
+java.version=1.7.0_21
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.android.ide.eclipse.adt.package.product -data C:\home\projects\android-calendar-drafts\public -clean
+
+!ENTRY org.eclipse.osgi 4 0 2014-01-29 23:23:35.124
+!MESSAGE The -clean (osgi.clean) option was not successful. Unable to clean the storage area: C:\Program Files\eclipse-adt-r22\configuration\org.eclipse.osgi
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-01-29 23:23:53.607
+!MESSAGE Starting AndroidAnnotations annotation processing
