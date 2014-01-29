@@ -2,6 +2,8 @@ package com.touchableheroes.drafts.calendar.cmd;
 
 import java.util.ArrayList;
 
+import com.touchableheroes.drafts.calendar.dao.EventId;
+
 import android.annotation.TargetApi;
 import android.content.ContentResolver;
 import android.content.ContentUris;
@@ -40,8 +42,8 @@ public class DeleteEventByHeaderCmd extends DeleteEventCmd {
 		   
 			Log.d("calendar-drafts", "-- ## title : " + cursor.getString(titleIdx));
 			final long id = cursor.getLong(idIdx);
-			final Uri idUri = ContentUris.withAppendedId(Events.CONTENT_URI, id);
-
+			final Uri idUri = EventId.createUri(id);
+			
 			ids.add(idUri);
 		}
 		

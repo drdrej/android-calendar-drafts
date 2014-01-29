@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="CreateEventsTestCase" project="tests" tests="2" started="0" failures="0" errors="0" ignored="0">
-  <testsuite name="asus-nexus_7-015d483b8a0ffc0a" incomplete="true">
-    <testsuite name="com.touchableheroes.drafts.calendar.test.CreateEventsTestCase" incomplete="true">
-      <testcase name="testDeleteEventByHeader " classname="com.touchableheroes.drafts.calendar.test.CreateEventsTestCase" incomplete="true"/>
-      <testcase name="testSimpleEvent " classname="com.touchableheroes.drafts.calendar.test.CreateEventsTestCase" incomplete="true"/>
-    </testsuite>
-  </testsuite>
-</testrun>

@@ -5,3 +5,11 @@
 1390940274248	Copy file
 1390940285537	Rename resource 'draftscalendar.jar'
 1390940328431	Rename resource 'draftscalendar-0.1.0.jar'
+1391002494965	Copy compilation unit
+1391013228733	Rename type 'WherePart'
+1391013339099	Rename type 'WhereEventPart'
+1391021666858	Move compilation unit
+1391023982030	Rename type 'AbstractLoadEventCmd'
+1391023991120	Rename type 'LoadEventByIdEventCmd'
+1391028198293	Copy file
+1391028214081	Rename resource 'draftscalendar.jar'

@@ -4,10 +4,12 @@ import com.touchableheroes.drafts.calendar.cmd.DeleteEventByHeaderCmd;
 import com.touchableheroes.drafts.calendar.cmd.DeleteEventCmd;
 import com.touchableheroes.drafts.calendar.cmd.ExistsEventCmd;
 import com.touchableheroes.drafts.calendar.cmd.InsertEventCmd;
+import com.touchableheroes.drafts.calendar.cmd.LoadEventByIdCmd;
+import com.touchableheroes.drafts.calendar.cmd.UpdateEventByHeaderCmd;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.util.Log;
+
 
 /**
  * Simple dao to access calendar-events.
@@ -17,10 +19,13 @@ import android.util.Log;
 public class EventsDAO {
 
 	private final Activity activity;
+	
 	private final InsertEventCmd insert;
 	private final ExistsEventCmd exists;
 	private final DeleteEventCmd delete;
 	private final DeleteEventByHeaderCmd deleteByHeader;
+	private final UpdateEventByHeaderCmd updateByHeader;
+	private final LoadEventByIdCmd loadOneById;
 
 	public EventsDAO(final Activity activity) {
 		this.activity = activity;
@@ -28,6 +33,8 @@ public class EventsDAO {
 		this.exists = new ExistsEventCmd(activity);
 		this.delete = new DeleteEventCmd(activity);
 		this.deleteByHeader = new DeleteEventByHeaderCmd(activity);
+		this.updateByHeader = new UpdateEventByHeaderCmd(activity);
+		this.loadOneById = new LoadEventByIdCmd(activity); 
 	}
 
 	/**
@@ -48,20 +55,19 @@ public class EventsDAO {
 
 	public boolean createRepeatableEvent(final long beginDate,
 			final String duration, final String title, final String description) {
-		// insert.exec(1, beginDate, duration, title, description);
-
-		// event.put("rrule", "FREQ=WEEKLY;WKST=SU;BYDAY=WE");
-		// event.put("allDay", 1); // 0 for false, 1 for true
-		// event.put("eventStatus", 1);
-		// event.put("hasAlarm", 1); // 0 for false, 1 for true
-		// event.put("duration","P3600S")
-
+		// todo: impl. for repeatable tasks.
 		return false;
 	}
 
 	public boolean exists(final EventId id) {
 		final Uri idUri = id.getUri();
 		return exists.exec(idUri);
+	}
+	
+	public Event load(final EventId id) {
+		final Uri idUri = id.getUri();
+		
+		return loadOneById.exec(idUri);
 	}
 
 	public boolean delete(final EventId id) {
@@ -73,6 +79,15 @@ public class EventsDAO {
 	 */
 	public boolean deleteByHeader(final String title, final long begin, final long end) {
 		return deleteByHeader.exec(title, begin, end);
+	}
+	
+	/**
+	 * identify by title, start-date & end-date.
+	 */
+	public boolean updateByHeader(final String title, final long begin, final long end, final String newTitle, final long newBegin, final long newEnd,
+			final String newDescription, final String newLocation) {
+		return updateByHeader.exec(title, begin, end, newTitle, newBegin, newEnd,
+				newDescription, newLocation);
 	}
 	
 }

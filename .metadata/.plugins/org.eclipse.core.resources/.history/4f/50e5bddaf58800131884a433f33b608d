@@ -1,0 +1,71 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import java.util.TimeZone;
+
+import com.touchableheroes.drafts.calendar.dao.EventId;
+
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.net.Uri;
+import android.os.Build;
+import android.provider.CalendarContract.Events;
+
+/**
+ * Modifies an existing event in default-calendar.
+ * 
+ * @author A. Siebert / ask@touchableheroes.com
+ */
+@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+public class ModifyEventCmd extends ContextCmd {
+
+	public ModifyEventCmd(final Activity ctx) {
+		super(ctx);
+	}
+	
+
+	@SuppressLint("InlinedApi")
+	public Uri exec(final int calenderId, final long start, final long end, final String title, final String description) {
+		final Uri createUri = EventId.createUri( calenderId );
+		final ContentResolver cr = getContentResolver();
+		
+		final ContentValues values = new ContentValues();
+		
+		values.put(Events.CALENDAR_ID, calenderId);
+		
+		values.put(Events.DTSTART, start);
+		values.put(Events.DTEND, end);
+		
+		values.put(Events.ALL_DAY, 0);
+		
+		values.put(Events.TITLE, title);
+		values.put(Events.DESCRIPTION, description);
+		
+		final TimeZone zone = TimeZone.getDefault();
+		values.put(Events.EVENT_TIMEZONE, zone.getID());
+		
+		return cr.insert(Events.CONTENT_URI, values);
+		
+		
+		title, location, notes, startDate, endDate, 
+				                                   newTitle, newLocation, newNotes, newStartDate, newEndDate, 
+				                                   successCallback, errorCallback) 
+		
+		
+		private static final String DEBUG_TAG = "MyActivity";
+		...
+		long eventID = 188;
+		...
+		ContentResolver cr = getContentResolver();
+		ContentValues values = new ContentValues();
+		Uri updateUri = null;
+		// The new title for the event
+		values.put(Events.TITLE, "Kickboxing"); 
+		updateUri = ContentUris.withAppendedId(Events.CONTENT_URI, eventID);
+		int rows = getContentResolver().update(updateUri, values, null, null);
+		Log.i(DEBUG_TAG, "Rows updated: " + rows);
+		
+	}
+}

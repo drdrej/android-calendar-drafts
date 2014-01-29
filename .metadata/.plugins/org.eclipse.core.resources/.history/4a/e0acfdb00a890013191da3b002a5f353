@@ -1,0 +1,24 @@
+package com.touchableheroes.drafts.calendar.cursor;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.touchableheroes.drafts.calendar.dao.Event;
+
+import android.database.Cursor;
+
+public class GetValueFacade {
+
+	private final Cursor cursor;
+	private final List<Event> buffer;
+
+	public GetValueFacade(Cursor cursor, final List<Event> buffer) {
+		this.cursor = cursor;
+
+		if (buffer != null)
+			this.buffer = null;
+		else
+			this.buffer = null;
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.touchableheroes.drafts.calendar.util;
+
+import java.util.ArrayList;
+
+/**
+ * Represents a "where" part of a query for content-provider.
+ * 
+ * @author A. Siebert, ask@touchableheroes.com
+ */
+public class WherePart {
+
+
+	private final String where;
+	private final ArrayList<String> values;
+
+	public WherePart(final String where, final ArrayList<String> values) {
+		this.where = where;
+		this.values = values;
+	}
+
+	public String[] values() {
+		return values;
+	}
+	
+	public String where() {
+		return where;
+	}
+}

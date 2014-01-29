@@ -1,0 +1,34 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import android.content.Context;
+
+
+/**
+ * @author A. Siebert, ask@touchableheroes.com
+ */
+public class UpdateEventByHeaderCmd extends ContextCmd {
+
+	public UpdateEventByHeaderCmd(final Context ctx) {
+		super(ctx);
+	}
+
+	/**
+	 * @param title part of the query, skip param if value null.
+	 * @param begin part of the query, skip param if value null.
+	 * @param end part of the query, skip param if value null.
+	 * 
+	 * @param newTitle don't update if null passed
+	 * @param newBegin don't update if null passed
+	 * @param newEnd don't update if null passed
+	 * @param newDescription don't update if null passed
+	 * @param newLocation don't update if null passed
+	 * 
+	 * @return true if operation is successful.
+	 */
+	public boolean exec(final String title, final long begin, final long end,
+			final String newTitle, final long newBegin, final long newEnd,
+			final String newDescription, final String newLocation) {
+		return false;
+	}
+
+}

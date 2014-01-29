@@ -1,0 +1,15 @@
+package com.touchableheroes.drafts.calendar.util;
+
+/**
+ * simplifies the query-building for events and calendar-content-provider.
+ * 
+ * @author A. Siebert, ask@touchableheroes.com
+ *
+ */
+public class WhereQueryPartBuilder {
+	
+	public static String createForEvents( ) {
+		
+	}
+
+}

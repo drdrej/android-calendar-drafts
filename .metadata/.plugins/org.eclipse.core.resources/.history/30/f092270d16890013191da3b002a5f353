@@ -1,0 +1,17 @@
+package com.touchableheroes.drafts.calendar.dao;
+
+import android.content.Context;
+
+import com.touchableheroes.drafts.calendar.cmd.ContextCmd;
+
+public class UpdateEventByHeaderCmd extends ContextCmd {
+
+	public UpdateEventByHeaderCmd(final Context ctx) {
+		super(ctx);
+	}
+	
+	public boolean exec(final String title, final long begin, final long end, final String newTitle, final long newBegin, final long newEnd, final String newDescription, final String newLocation) {
+		
+	}
+
+}

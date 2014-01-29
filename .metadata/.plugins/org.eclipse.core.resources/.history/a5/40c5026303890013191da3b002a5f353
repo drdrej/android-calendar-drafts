@@ -1,0 +1,19 @@
+package com.touchableheroes.drafts.calendar.util;
+
+import java.util.ArrayList;
+
+/**
+ * Represents a "where" part of a query for content-provider.
+ * 
+ * @author A. Siebert, ask@touchableheroes.com
+ */
+public class WhereEventPart {
+
+	public WhereEventPart( final String where, final String title, final long begin, final long end, final String location, final String description) {
+		
+	}
+
+	public WhereEventPart(String string, ArrayList<String> values) {
+		;
+	}
+}

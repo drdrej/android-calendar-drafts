@@ -1,0 +1,43 @@
+package com.touchableheroes.drafts.calendar.util;
+
+import java.util.ArrayList;
+
+import android.provider.CalendarContract.Events;
+
+/**
+ * simplifies the query-building for events and calendar-content-provider.
+ * 
+ * @author A. Siebert, ask@touchableheroes.com
+ */
+public class WhereQueryPartBuilder {
+	
+	public static WherePart createForEvents(final String title, final long begin, final long end, final String location, final String description) {
+		final StringBuilder builder = new StringBuilder();
+		final ArrayList<String> values = new ArrayList<String>(5);
+		
+		if( title != null ) {
+			appendWhere(builder, title, Events.TITLE, values);
+		}
+		
+//		final String where = ;
+//		final String[] projection = { Events.TITLE, Events._ID };
+//		final String[] values = new String[] { title };
+		
+		return new WherePart(builder.toString(), values);
+	}
+
+	private static void appendWhere(final StringBuilder builder, final String key,
+			final String value, final ArrayList<String> values) {
+		if( value == null ) 
+			return;
+		
+		if( builder.length() > 0 )
+			builder.append( " " );
+		
+		builder.append( Events.TITLE );
+		builder.append( " = ? " );
+		
+		values.add( value );
+	}
+
+}

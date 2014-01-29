@@ -1,0 +1,9 @@
+package com.touchableheroes.drafts.calendar.util;
+
+/**
+ * 
+ * @author A. Siebert, ask@touchableheroes.com
+ */
+public class WherePart {
+
+}

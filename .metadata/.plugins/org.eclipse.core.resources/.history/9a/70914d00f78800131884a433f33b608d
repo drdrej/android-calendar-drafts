@@ -1,0 +1,20 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.touchableheroes.drafts.calendar.dao.Event;
+
+import android.content.Context;
+
+public class LoadEventsCmd extends ContextCmd {
+
+	public LoadEventsCmd(final Context ctx) {
+		super(ctx);
+	}
+	
+	public List<Event> exec() {
+		final ArrayList<Event> events = new ArrayList<Event>();
+	}
+
+}

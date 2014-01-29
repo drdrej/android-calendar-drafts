@@ -1,0 +1,38 @@
+package com.touchableheroes.drafts.calendar.cursor;
+
+
+import java.util.List;
+
+import com.touchableheroes.drafts.calendar.dao.Event;
+
+import android.database.Cursor;
+
+/**
+ * 
+ * @author A. Siebert, ask@touchableheroes.com
+ */
+public class GetValueFacade {
+
+	private final Cursor cursor;
+	private final List<Event> buffer;
+	private final Event current;
+
+	public GetValueFacade(Cursor cursor, final List<Event> buffer) {
+		this.cursor = cursor;
+
+		if (buffer != null)
+			this.buffer = buffer;
+		else
+			this.buffer = null;
+		
+		this.current = new Event();
+	}
+
+	public void push() {
+		if( this.buffer == null )
+			return;
+		
+		this.buffer.add(current);
+	}
+
+}

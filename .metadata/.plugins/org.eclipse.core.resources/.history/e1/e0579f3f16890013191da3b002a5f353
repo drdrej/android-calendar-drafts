@@ -1,0 +1,33 @@
+package com.touchableheroes.drafts.calendar.dao;
+
+import android.content.Context;
+
+import com.touchableheroes.drafts.calendar.cmd.ContextCmd;
+
+public class UpdateEventByHeaderCmd extends ContextCmd {
+
+	public UpdateEventByHeaderCmd(final Context ctx) {
+		super(ctx);
+	}
+
+	/**
+	 * 
+	 * @param title part of the query
+	 * @param begin part of the query
+	 * @param end part of the query
+	 * 
+	 * @param newTitle
+	 * @param newBegin
+	 * @param newEnd
+	 * @param newDescription
+	 * @param newLocation
+	 * 
+	 * @return true if operation is successful.
+	 */
+	public boolean exec(final String title, final long begin, final long end,
+			final String newTitle, final long newBegin, final long newEnd,
+			final String newDescription, final String newLocation) {
+		return false;
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import android.content.Context;
+
+/**
+ * @author A. Siebert, ask@touchableheroes.com
+ */
+public class LoadEventByIdCmd extends ContextCmd {
+
+	public LoadEventByIdCmd(Context ctx) {
+		super(ctx);
+	}
+
+}

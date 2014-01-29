@@ -1,0 +1,66 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+import java.util.List;
+
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.content.Context;
+import android.provider.CalendarContract.Events;
+import android.util.Log;
+
+import com.touchableheroes.drafts.calendar.dao.Event;
+
+
+/**
+ * Simple implementation of Update (one-by-one update)
+ * Is not optimized for batch-updates.
+ * 
+ * @author A. Siebert, ask@touchableheroes.com
+ */
+public class UpdateEventByHeaderCmd extends ContextCmd {
+
+	private final LoadEventsCmd load;
+	
+	public UpdateEventByHeaderCmd(final Context ctx) {
+		super(ctx);
+		
+		this.load = new LoadEventsCmd(ctx);
+	}
+
+	/**
+	 * @param title part of the query, skip param if value null.
+	 * @param begin part of the query, skip param if value null.
+	 * @param end part of the query, skip param if value null.
+	 * 
+	 * @param newTitle don't update if null passed
+	 * @param newBegin don't update if null passed
+	 * @param newEnd don't update if null passed
+	 * @param newDescription don't update if null passed
+	 * @param newLocation don't update if null passed
+	 * 
+	 * @return true if operation is successful.
+	 */
+	public boolean exec(final String title, final long begin, final long end,
+			final String newTitle, final long newBegin, final long newEnd,
+			final String newDescription, final String newLocation) {
+		
+		final List<Event> events = this.load.exec(title, begin, end, null, null);
+		
+		int sum = 0;
+		for (final Event event : events) {
+			final ContentResolver cr = getContentResolver();
+			final ContentValues values = event.newUpdateContentValues(newTitle, newBegin, newEnd,
+					newDescription, newLocation);
+			
+			final int count = cr.update(event.getId().getUri(), values, null, null);
+			Log.d("phonegap-calendar-plugin", "updated: " + count + " events in calendar." );
+			
+			sum += count;
+		}
+		
+		
+
+		return events.size() == sum;
+	}
+
+}

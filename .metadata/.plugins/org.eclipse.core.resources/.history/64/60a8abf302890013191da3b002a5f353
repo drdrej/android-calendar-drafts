@@ -1,0 +1,9 @@
+package com.touchableheroes.drafts.calendar.util;
+
+/**
+ * Represents a "where" part of a query for content-provider.
+ * @author A. Siebert, ask@touchableheroes.com
+ */
+public class WherePart {
+
+}

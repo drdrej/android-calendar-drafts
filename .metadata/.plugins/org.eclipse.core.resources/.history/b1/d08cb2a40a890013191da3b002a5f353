@@ -1,0 +1,13 @@
+package com.touchableheroes.drafts.calendar.cursor;
+
+import android.database.Cursor;
+
+public class GetValueFacade {
+
+	private final Cursor cursor;
+
+	public GetValueFacade(Cursor cursor) {
+		this.cursor = cursor;
+	}
+
+}
