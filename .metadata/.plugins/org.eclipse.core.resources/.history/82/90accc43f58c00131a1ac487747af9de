@@ -1,0 +1,13 @@
+package com.touchableheroes.drafts.calendar.cmd;
+
+public class InsertRepeatableEventCmd {
+
+	
+	intent.putExtra("allDay", true);
+	intent.putExtra("rrule", "FREQ=YEARLY");
+	
+	values.put(Events.RRULE, 
+			17
+			      "FREQ=DAILY;COUNT=20;BYDAY=MO,TU,WE,TH,FR;WKST=MO");
+
+}

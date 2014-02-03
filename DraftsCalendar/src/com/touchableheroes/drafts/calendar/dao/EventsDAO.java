@@ -3,6 +3,7 @@ package com.touchableheroes.drafts.calendar.dao;
 import com.touchableheroes.drafts.calendar.cmd.DeleteEventByHeaderCmd;
 import com.touchableheroes.drafts.calendar.cmd.DeleteEventCmd;
 import com.touchableheroes.drafts.calendar.cmd.ExistsEventCmd;
+import com.touchableheroes.drafts.calendar.cmd.InsertDaylyRepeatableEventCmd;
 import com.touchableheroes.drafts.calendar.cmd.InsertEventCmd;
 import com.touchableheroes.drafts.calendar.cmd.LoadEventByIdCmd;
 import com.touchableheroes.drafts.calendar.cmd.UpdateEventByHeaderCmd;
@@ -51,6 +52,25 @@ public class EventsDAO {
 			final String title, final String description) {
 		final Uri result = insert.exec(1, beginDate, endDate, title, description);
 		return new EventId(result);
+	}
+	
+	/**
+	 * method to create a repeated dayly event.
+	 * 
+	 * @param beginDate
+	 * @param endDate
+	 * @param title
+	 * @param description
+	 * 
+	 * @return
+	 */
+	public EventId createDaylyEvent(final long beginDate, final long endDate,
+			final String title, final String description, final long until) {
+		final InsertDaylyRepeatableEventCmd repeatable = new InsertDaylyRepeatableEventCmd( this.activity );
+		
+		// writes repeatable events until in a given cycle:
+		final Uri idUri = repeatable.exec(1, beginDate, endDate, title, description, "");
+		return new EventId(idUri);
 	}
 
 	public boolean createRepeatableEvent(final long beginDate,

@@ -2707,3 +2707,140 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.android.i
 
 !ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-01-29 23:23:53.607
 !MESSAGE Starting AndroidAnnotations annotation processing
+!SESSION 2014-02-02 17:59:24.700 -----------------------------------------------
+eclipse.buildId=v22.0.1-685705
+java.version=1.7.0_21
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.android.ide.eclipse.adt.package.product -data C:\home\projects\android-calendar-drafts\public -clean
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-02 17:59:48.229
+!MESSAGE Starting AndroidAnnotations annotation processing
+!SESSION 2014-02-03 17:50:52.357 -----------------------------------------------
+eclipse.buildId=v22.0.1-685705
+java.version=1.7.0_21
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.android.ide.eclipse.adt.package.product -data C:\home\projects\android-calendar-drafts\public -clean
+
+!ENTRY org.eclipse.osgi 4 0 2014-02-03 17:50:52.798
+!MESSAGE The -clean (osgi.clean) option was not successful. Unable to clean the storage area: C:\Program Files\eclipse-adt-r22\configuration\org.eclipse.osgi
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 17:51:12.703
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 17:54:32.354
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:03:40.410
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:04:38.577
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:04:58.951
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:05:39.799
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:05:54.295
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:07:14.468
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:07:21.842
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:07:46.040
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:08:16.665
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:08:21.184
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:08:59.927
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:09:02.191
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:09:36.000
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:09:47.509
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:21:44.583
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:22:00.776
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:22:01.911
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:22:45.531
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:22:52.340
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:23:20.869
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:23:26.006
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:23:27.743
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:24:24.234
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:24:29.397
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:24:45.300
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:24:57.747
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:25:07.858
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:25:09.987
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:39:12.510
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:39:21.410
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 18:39:39.082
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 19:03:52.114
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 19:04:14.794
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 19:05:41.672
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 19:06:33.497
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 19:07:11.180
+!MESSAGE Starting AndroidAnnotations annotation processing
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2014-02-03 19:07:32.469
+!MESSAGE Starting AndroidAnnotations annotation processing
